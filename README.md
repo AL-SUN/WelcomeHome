@@ -18,19 +18,22 @@
 
 ## 🛠️ Tech Stack
 
-### Frontend:
+<table>
+  
+  <tr>
+    <td><strong>Frontend</strong></td>
+    <td>TypeScript, React</td>
+  </tr>
+  <tr>
+    <td><strong>Backend</strong></td>
+    <td>Python, Flask</td>
+  </tr>
+  <tr>
+    <td><strong>Database</strong></td>
+    <td>MySQL</td>
+  </tr>
+</table>
 
-- TypeScript
-- React
-
-### Backend:
-
-  - Python
-  - Flask
-
-### Database:
-
-  - MySQL
 
 ## 📥 Setup & Installation
 
