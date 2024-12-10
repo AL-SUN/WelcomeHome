@@ -99,8 +99,43 @@ The backend server will run on http://localhost:5000 (default Flask port).
 
   The frontend will be available at http://localhost:3000.
 
-
 #### **⚠️ Important Notes**
 
 - **Both the frontend and backend servers must be running simultaneously** to access the full application.
 - If you encounter issues connecting to MySQL, double-check your `config.py` settings and MySQL server status.
+
+
+<details>
+  <summary>Stay tuned for future developments! 🚀</summary>
+  
+## 💡 Future Enhancements
+
+To further improve the WelcomeHome application, here are some key features and improvements we plan to implement:
+
+1. **Image Upload Support**  
+   - Enable users to upload images for donations and submissions.  
+   - Update the database to store image references.  
+   - Display uploaded images in donation details and client orders.  
+
+2. **Enhanced Frontend Information Display**  
+   - Improve the presentation of data on the frontend for better readability and clarity.  
+   - Optimize how donation, order, and delivery information is displayed to users.  
+
+3. **UI/UX Improvements**  
+   - Redesign the UI for a more modern and visually appealing experience.  
+   - Enhance navigation and user experience (UX) for administrators, donors, and volunteers.  
+
+4. **Notification System**  
+   - Implement a system to notify users of order status updates.  
+   - Provide real-time updates for order changes and delivery schedules.  
+5. **Data Visualization & Analytics**  
+   - Create dashboards to display trends in donations, orders, and volunteer activities.  
+   - Use charts and graphs to provide insights for administrators.
+   - Prepare data for a year-end report with key information for grant applications.
+
+6. **Security Enhancements**  
+   - Conduct regular security audits to protect against vulnerabilities like SQL injection and XSS.  
+   - Implement robust input validation and sanitization for all user inputs.
+
+(Planned for Winter Break)
+</details>
