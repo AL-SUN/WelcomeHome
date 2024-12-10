@@ -43,7 +43,7 @@ git clone https://github.com/AL-SUN/WelcomeHome.git
 cd WelcomeHome
 ```
 
----
+##
 
 2️⃣ **Install dependencies**:
 
@@ -61,7 +61,7 @@ cd ../backend # Navigate to the backend folder
 pip install -r requirements.txt
 ```
 
----
+##
 
 3️⃣ **Configure the Database**
 
@@ -69,14 +69,14 @@ pip install -r requirements.txt
 
 2. Update the `config.py` file in the `backend/` folder to match your MySQL database settings (user, password, host and port).
 
----
+##
 
 4️⃣ **Import the Database Schema & Seed Data**
 
 1. Start your MySQL server.
 
-2. Import the SQL files to set up the database schema and populate it with sample data, using `projectTableDefs-v2.sql` and `examplesData.sql` in `backend` folder.
----
+2. Import the SQL files to set up the database schema and populate it with sample data, using `projectTableDefs-v2.sql` and `examplesData.sql` in `backend/` folder.
+##
 
 5️⃣ **Start the Development Servers**
 
@@ -91,7 +91,7 @@ The backend server will run on http://localhost:5000 (default Flask port).
 2. **Start the frontend:** Run the following command in the `frontend/` folder:
 
   ```bash
-  npm start  # Run in frontend folder
+  npm start 
   ```
 
   The frontend will be available at http://localhost:3000.
