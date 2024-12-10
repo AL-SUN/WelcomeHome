@@ -75,16 +75,7 @@ pip install -r requirements.txt
 
 1. Start your MySQL server.
 
-2. Import the SQL files to set up the database schema and populate it with sample data. 
-
-   Use graphic interface to import `projectTableDefs-v2.sql` and `examplesData.sql` in `backend` folder.
-   Or run following commands (replace `your_db_user` and `your_database_name`):
-
-  ```bash
-  mysql -u your_db_user -p your_database_name < backend/projectTableDefs-v2.sql
-  mysql -u your_db_user -p your_database_name < backend/examplesData.sql
-  ```
-
+2. Import the SQL files to set up the database schema and populate it with sample data, using `projectTableDefs-v2.sql` and `examplesData.sql` in `backend` folder.
 ---
 
 5️⃣ **Start the Development Servers**
