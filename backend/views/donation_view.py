@@ -25,7 +25,8 @@ def get_locations():
     connection = get_db_connection()
     cursor = connection.cursor(dictionary=True)
 
-    cursor.execute("SELECT roomNum, shelfNum, shelf, shelfDescription FROM Location")
+    # Get all locations except the preparation room
+    cursor.execute("SELECT roomNum, shelfNum, shelf, shelfDescription FROM Location WHERE roomNum != -1 AND shelfNum != -1")
     locations = cursor.fetchall()
 
     cursor.close()

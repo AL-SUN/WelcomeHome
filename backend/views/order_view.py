@@ -20,7 +20,8 @@ def order_info():
             return jsonify({"error": "Order not found"}), 404
                 
         cursor.execute("SELECT EXISTS(SELECT * FROM ItemIn WHERE orderID = %s)", (orderid,))
-        order['submit'] = True if cursor.fetchone() else False
+        data = cursor.fetchone()
+        order['submit'] = True if data.get(f"EXISTS(SELECT * FROM ItemIn WHERE orderID = '{orderid}')") else False
         
         order['orderDate'] = order['orderDate'].strftime("%Y-%m-%d")
         return jsonify(order), 200
@@ -272,9 +273,9 @@ def check_order_status():
     
     try:
         # Use EXISTS for efficiency
-        cursor.execute("SELECT EXISTS(SELECT 1 FROM Delivered WHERE orderID = %s)", (order_id,))
-        result = cursor.fetchone()
-        if not result:
+        cursor.execute("SELECT EXISTS(SELECT * FROM Delivered WHERE orderID = %s)", (order_id,))
+        result = cursor.fetchone() # result is a tuple
+        if not result[0]:
             return jsonify({"status": "Order not delivered"}), 200
         return jsonify({"status": "delivered"}), 200
     except Exception as e:
@@ -295,6 +296,12 @@ def update_item_location():
     cursor = connection.cursor()
 
     try:
+        # Check if the order has submitted items
+        cursor.execute("SELECT EXISTS(SELECT * FROM ItemIn WHERE orderID = %s)", (order_id,))
+        result = cursor.fetchone()
+        if not result[0]:
+            return jsonify({"error": "The order hasn't been submitted."}), 400        
+        
         # Update the location of all pieces associated with the order to (-1, -1)
         cursor.execute("""
             UPDATE Piece 

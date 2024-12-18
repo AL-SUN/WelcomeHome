@@ -34,6 +34,9 @@ const App = () => {
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+
+
+
           <Route path="/findItem" element={<ProtectedRoute element={<FindItemLocations />} />} />
           <Route path="/findOrder" element={<ProtectedRoute element={<FindOrderItems />} />} />
           <Route path="/donateForm" element={<ProtectedRoute element={<RoleRoute element={<DonationForm />} requiredRoles={["staff"]} />} />} />
@@ -41,9 +44,11 @@ const App = () => {
           <Route path="/shop/:orderId" element={<ProtectedRoute element={<RoleRoute element={<ShopPage />} requiredRoles={["staff"]} />} />} />
           <Route path="/dashboard" element={<ProtectedRoute element={<Dashboard />} />} />
           <Route path="/rankSystem" element={<ProtectedRoute element={<RankSystem />} />} />
-          <Route path="/prepareOrder" element={<ProtectedRoute element={<OrderUpdate />} />} />
+          {/* <Route path="/prepareOrder" element={<ProtectedRoute element={<OrderUpdate />} />} /> */}
+          <Route path="/prepareOrder" element={<ProtectedRoute element={<RoleRoute element={<OrderUpdate />} requiredRoles={["staff","volunteer"]} />} />} />
           <Route path="/userTasks" element={<ProtectedRoute element={<UserOrders />} />} />
           <Route path="/OrderUpdate" element={<ProtectedRoute element={<RoleRoute element={<OrderManagement />} requiredRoles={["staff","volunteer"]} />} />} />
+          
           <Route
             path="/"
             element={
